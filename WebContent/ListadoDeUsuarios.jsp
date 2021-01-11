@@ -6,10 +6,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Empresa Asesorías</title>
 <link rel="stylesheet" href="Estilos.css">
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="script.js"></script>
+
 </head>
 <body>
 	<header id="seccion">
@@ -55,13 +56,15 @@
 				<td><c:out value="${lus.getUsernombre()}" /></td>
 				<td><c:out value="${lus.getUserapellidos()}" /></td>
 				<td><c:out value="${lus.getUserFechaNacimiento()}" /></td>
-				<td><c:out value="${lus.getUserTipo()}" /></td>
-				<td><input type="button" value="Eliminar"></td>
+				<td><c:out value="${lus.getUserTipo()}"  /></td>
+				<td><input type="button" value="Editar" name="Editar" id="editar" /></td>
 				
-				<td><input type="button" value="Editar" name="Editar"
-					onclick="location.href='editaradministrativo.html'" /></td>
+								
 			</tr>
+			
 			</c:forEach>
+						
+			
 		</table>
 
 	</fieldset>

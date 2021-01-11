@@ -10,18 +10,17 @@ public class Cliente  {
 
 	/** Atributos de la clase encapsulados */
 
-	private String ClieRut;
+	private String RutCliente;
 	private String ClieNombre;
 	private String ClieApellidos;
-	private int ClieTelefono;
+	private String ClieTelefono;
 	private String ClieAfp;
 	private int SistemaSalud;
 	private String ClieDireccion;
 	private String ClieComuna;
 	private int ClieEdad;
 	private int usuario_idusuario;
-	private String UserNombre;
-	private String UserApellido;
+	
 	
 	
 	public Cliente() {
@@ -29,11 +28,11 @@ public class Cliente  {
 	}
 
 
-	public Cliente(String clieRut, String clieNombre, String clieApellidos, int clieTelefono, String clieAfp,
-			int sistemaSalud, String clieDireccion, String clieComuna, int clieEdad, int usuario_idusuario,
-			String userNombre, String userApellido) {
+
+	public Cliente(String rutCliente, String clieNombre, String clieApellidos, String clieTelefono, String clieAfp,
+			int sistemaSalud, String clieDireccion, String clieComuna, int clieEdad, int usuario_idusuario) {
 		super();
-		ClieRut = clieRut;
+		RutCliente = rutCliente;
 		ClieNombre = clieNombre;
 		ClieApellidos = clieApellidos;
 		ClieTelefono = clieTelefono;
@@ -43,19 +42,20 @@ public class Cliente  {
 		ClieComuna = clieComuna;
 		ClieEdad = clieEdad;
 		this.usuario_idusuario = usuario_idusuario;
-		UserNombre = userNombre;
-		UserApellido = userApellido;
 	}
 
 
-	public String getClieRut() {
-		return ClieRut;
+
+	public String getRutCliente() {
+		return RutCliente;
 	}
 
 
-	public void setClieRut(String clieRut) {
-		ClieRut = clieRut;
+
+	public void setRutCliente(String rutCliente) {
+		RutCliente = rutCliente;
 	}
+
 
 
 	public String getClieNombre() {
@@ -63,9 +63,11 @@ public class Cliente  {
 	}
 
 
+
 	public void setClieNombre(String clieNombre) {
 		ClieNombre = clieNombre;
 	}
+
 
 
 	public String getClieApellidos() {
@@ -73,19 +75,23 @@ public class Cliente  {
 	}
 
 
+
 	public void setClieApellidos(String clieApellidos) {
 		ClieApellidos = clieApellidos;
 	}
 
 
-	public int getClieTelefono() {
+
+	public String getClieTelefono() {
 		return ClieTelefono;
 	}
 
 
-	public void setClieTelefono(int clieTelefono) {
+
+	public void setClieTelefono(String clieTelefono) {
 		ClieTelefono = clieTelefono;
 	}
+
 
 
 	public String getClieAfp() {
@@ -93,9 +99,11 @@ public class Cliente  {
 	}
 
 
+
 	public void setClieAfp(String clieAfp) {
 		ClieAfp = clieAfp;
 	}
+
 
 
 	public int getSistemaSalud() {
@@ -103,9 +111,11 @@ public class Cliente  {
 	}
 
 
+
 	public void setSistemaSalud(int sistemaSalud) {
 		SistemaSalud = sistemaSalud;
 	}
+
 
 
 	public String getClieDireccion() {
@@ -113,9 +123,11 @@ public class Cliente  {
 	}
 
 
+
 	public void setClieDireccion(String clieDireccion) {
 		ClieDireccion = clieDireccion;
 	}
+
 
 
 	public String getClieComuna() {
@@ -123,9 +135,11 @@ public class Cliente  {
 	}
 
 
+
 	public void setClieComuna(String clieComuna) {
 		ClieComuna = clieComuna;
 	}
+
 
 
 	public int getClieEdad() {
@@ -133,9 +147,11 @@ public class Cliente  {
 	}
 
 
+
 	public void setClieEdad(int clieEdad) {
 		ClieEdad = clieEdad;
 	}
+
 
 
 	public int getUsuario_idusuario() {
@@ -143,39 +159,21 @@ public class Cliente  {
 	}
 
 
+
 	public void setUsuario_idusuario(int usuario_idusuario) {
 		this.usuario_idusuario = usuario_idusuario;
 	}
 
 
-	public String getUserNombre() {
-		return UserNombre;
-	}
-
-
-	public void setUserNombre(String userNombre) {
-		UserNombre = userNombre;
-	}
-
-
-	public String getUserApellido() {
-		return UserApellido;
-	}
-
-
-	public void setUserApellido(String userApellido) {
-		UserApellido = userApellido;
-	}
-
 
 	@Override
 	public String toString() {
-		return "Cliente [ClieRut=" + ClieRut + ", ClieNombre=" + ClieNombre + ", ClieApellidos=" + ClieApellidos
+		return "Cliente [RutCliente=" + RutCliente + ", ClieNombre=" + ClieNombre + ", ClieApellidos=" + ClieApellidos
 				+ ", ClieTelefono=" + ClieTelefono + ", ClieAfp=" + ClieAfp + ", SistemaSalud=" + SistemaSalud
 				+ ", ClieDireccion=" + ClieDireccion + ", ClieComuna=" + ClieComuna + ", ClieEdad=" + ClieEdad
-				+ ", usuario_idusuario=" + usuario_idusuario + ", UserNombre=" + UserNombre + ", UserApellido="
-				+ UserApellido + "]";
+				+ ", usuario_idusuario=" + usuario_idusuario + "]";
 	}
 
 
+	
 }

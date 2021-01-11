@@ -11,8 +11,7 @@ public class Administrativo {
 	private String AdminCorreo;
 	private String AdminArea;
 	private int usuario_idusuario;
-	private String UserNombre;
-	private String UserApellido;
+	
 	
 	
 	public Administrativo() {
@@ -20,8 +19,9 @@ public class Administrativo {
 	}
 
 
+
 	public Administrativo(int admin_id, String adminRun, String adminNombres, String adminApellidos, String adminCorreo,
-			String adminArea, int usuario_idusuario, String userNombre, String userApellido) {
+			String adminArea, int usuario_idusuario) {
 		super();
 		Admin_id = admin_id;
 		AdminRun = adminRun;
@@ -30,9 +30,8 @@ public class Administrativo {
 		AdminCorreo = adminCorreo;
 		AdminArea = adminArea;
 		this.usuario_idusuario = usuario_idusuario;
-		UserNombre = userNombre;
-		UserApellido = userApellido;
 	}
+
 
 
 	public int getAdmin_id() {
@@ -40,9 +39,11 @@ public class Administrativo {
 	}
 
 
+
 	public void setAdmin_id(int admin_id) {
 		Admin_id = admin_id;
 	}
+
 
 
 	public String getAdminRun() {
@@ -50,9 +51,11 @@ public class Administrativo {
 	}
 
 
+
 	public void setAdminRun(String adminRun) {
 		AdminRun = adminRun;
 	}
+
 
 
 	public String getAdminNombres() {
@@ -60,9 +63,11 @@ public class Administrativo {
 	}
 
 
+
 	public void setAdminNombres(String adminNombres) {
 		AdminNombres = adminNombres;
 	}
+
 
 
 	public String getAdminApellidos() {
@@ -70,9 +75,11 @@ public class Administrativo {
 	}
 
 
+
 	public void setAdminApellidos(String adminApellidos) {
 		AdminApellidos = adminApellidos;
 	}
+
 
 
 	public String getAdminCorreo() {
@@ -80,9 +87,11 @@ public class Administrativo {
 	}
 
 
+
 	public void setAdminCorreo(String adminCorreo) {
 		AdminCorreo = adminCorreo;
 	}
+
 
 
 	public String getAdminArea() {
@@ -90,9 +99,11 @@ public class Administrativo {
 	}
 
 
+
 	public void setAdminArea(String adminArea) {
 		AdminArea = adminArea;
 	}
+
 
 
 	public int getUsuario_idusuario() {
@@ -100,37 +111,18 @@ public class Administrativo {
 	}
 
 
+
 	public void setUsuario_idusuario(int usuario_idusuario) {
 		this.usuario_idusuario = usuario_idusuario;
 	}
 
-
-	public String getUserNombre() {
-		return UserNombre;
-	}
-
-
-	public void setUserNombre(String userNombre) {
-		UserNombre = userNombre;
-	}
-
-
-	public String getUserApellido() {
-		return UserApellido;
-	}
-
-
-	public void setUserApellido(String userApellido) {
-		UserApellido = userApellido;
-	}
 
 
 	@Override
 	public String toString() {
 		return "Administrativo [Admin_id=" + Admin_id + ", AdminRun=" + AdminRun + ", AdminNombres=" + AdminNombres
 				+ ", AdminApellidos=" + AdminApellidos + ", AdminCorreo=" + AdminCorreo + ", AdminArea=" + AdminArea
-				+ ", usuario_idusuario=" + usuario_idusuario + ", UserNombre=" + UserNombre + ", UserApellido="
-				+ UserApellido + "]";
+				+ ", usuario_idusuario=" + usuario_idusuario + "]";
 	}
 
 

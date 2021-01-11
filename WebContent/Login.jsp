@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Empresa Asesor+ias</title>
+<title>Empresa Asesorías</title>
 <link rel="stylesheet" href="Estilos.css">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script
@@ -27,12 +27,12 @@
 			<table class="cel- tablausr-t tablausr-e">
 				<tr>
 					<td>Nombre de Usuario</td>
-					<td><input type="text" name="txtnombre"
+					<td><input type="text" name="txtnombre" id="txtnombre"
 						placeholder="Nombre de Usuario" /></td>
 				</tr>
 				<tr>
 					<td>Contraseña</td>
-					<td><input type="password" name="txtpass"
+					<td><input type="password" name="txtpass" id="txtpass"
 						placeholder="Contraseña" /></td>
 				</tr>
 				<tr>

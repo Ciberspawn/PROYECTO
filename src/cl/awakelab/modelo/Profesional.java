@@ -14,7 +14,7 @@ public class Profesional  {
 	private String ProfRun;
 	private String ProfNombres;
 	private String ProfApellidos;
-	private int ProfTelefono;
+	private String ProfTelefono;
 	private String ProfTitulo;
 	private String ProfProyecto;
 	private int usuario_idusuario;
@@ -27,7 +27,7 @@ public class Profesional  {
 	}
 
 
-	public Profesional(int idProfesional, String profRun, String profNombres, String profApellidos, int profTelefono,
+	public Profesional(int idProfesional, String profRun, String profNombres, String profApellidos, String profTelefono,
 			String profTitulo, String profProyecto, int usuario_idusuario, String userNombre, String userApellido) {
 		super();
 		this.idProfesional = idProfesional;
@@ -83,12 +83,12 @@ public class Profesional  {
 	}
 
 
-	public int getProfTelefono() {
+	public String getProfTelefono() {
 		return ProfTelefono;
 	}
 
 
-	public void setProfTelefono(int profTelefono) {
+	public void setProfTelefono(String profTelefono) {
 		ProfTelefono = profTelefono;
 	}
 
