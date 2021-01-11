@@ -6,7 +6,7 @@ public class Administrativo {
 	/** Atributos de la clase encapsulados */
 	private int idadministrativo;
 	private String AdminRun;
-	private String AdminNombres;
+	private String AdmiNombres;
 	private String AdminApellidos;
 	private String AdminCorreo;
 	private String AdminArea;
@@ -20,12 +20,12 @@ public class Administrativo {
 
 
 
-	public Administrativo(int idadministrativo, String adminRun, String adminNombres, String adminApellidos,
+	public Administrativo(int idadministrativo, String adminRun, String admiNombres, String adminApellidos,
 			String adminCorreo, String adminArea, int usuario_idusuario) {
 		super();
 		this.idadministrativo = idadministrativo;
 		AdminRun = adminRun;
-		AdminNombres = adminNombres;
+		AdmiNombres = admiNombres;
 		AdminApellidos = adminApellidos;
 		AdminCorreo = adminCorreo;
 		AdminArea = adminArea;
@@ -58,14 +58,14 @@ public class Administrativo {
 
 
 
-	public String getAdminNombres() {
-		return AdminNombres;
+	public String getAdmiNombres() {
+		return AdmiNombres;
 	}
 
 
 
-	public void setAdminNombres(String adminNombres) {
-		AdminNombres = adminNombres;
+	public void setAdmiNombres(String admiNombres) {
+		AdmiNombres = admiNombres;
 	}
 
 
@@ -120,8 +120,8 @@ public class Administrativo {
 
 	@Override
 	public String toString() {
-		return "Administrativo [idadministrativo=" + idadministrativo + ", AdminRun=" + AdminRun + ", AdminNombres="
-				+ AdminNombres + ", AdminApellidos=" + AdminApellidos + ", AdminCorreo=" + AdminCorreo + ", AdminArea="
+		return "Administrativo [idadministrativo=" + idadministrativo + ", AdminRun=" + AdminRun + ", AdmiNombres="
+				+ AdmiNombres + ", AdminApellidos=" + AdminApellidos + ", AdminCorreo=" + AdminCorreo + ", AdminArea="
 				+ AdminArea + ", usuario_idusuario=" + usuario_idusuario + "]";
 	}
 

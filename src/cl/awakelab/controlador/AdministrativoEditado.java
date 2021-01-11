@@ -7,20 +7,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cl.awakelab.modelo.Administrativo;
 import cl.awakelab.modelo.Cliente;
 import cl.wakelab.implementacion.UsuariosImpl;
 
 /**
- * Servlet implementation class ClienteEditado
+ * Servlet implementation class AdministrativoEditado
  */
-@WebServlet("/ClienteEditado")
-public class ClienteEditado extends HttpServlet {
+@WebServlet("/AdministrativoEditado")
+public class AdministrativoEditado extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ClienteEditado() {
+    public AdministrativoEditado() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,35 +41,28 @@ public class ClienteEditado extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		
-		
-		String RutCliente = request.getParameter("txtrutcliente");
-		String clienombres = request.getParameter("txtnomcliente");
-		String cliapellidos = request.getParameter("txtapecliente");
-		String clitelefono = request.getParameter("txttelcliente");
-		String cliafp = request.getParameter("txtafpcliente");
-		int clisistemasalud = Integer.parseInt(request.getParameter("sisSalud"));
-		String clidireccion = request.getParameter("txtdirecccliente");
-		String clicomuna = request.getParameter("txtcomcliente");
-		int CliEdad = Integer.parseInt(request.getParameter("txtedadcliente"));
-		int usuario_idusuario = Integer.parseInt(request.getParameter("txtidclieuser"));
+		int idadministrativo = Integer.parseInt(request.getParameter("txtidadmin"));
+		String adminrun = request.getParameter("txtrutadmin");
+		String adminombres = request.getParameter("txtnomadmin");
+		String adminapellidos = request.getParameter("txtapeadmin");
+		String admincorreo = request.getParameter("txtemailadmin");
+		String adminarea = request.getParameter("txtarea");
+		int usuario_idusuario = Integer.parseInt(request.getParameter("txtiduseradmin"));
 		
 
-		Cliente us = new Cliente();
-		us.setCliente_idusuario(usuario_idusuario);
-		us.setRutCliente(RutCliente);
-		us.setClienombres(clienombres);
-		us.setCliapellidos(cliapellidos);
-		us.setClitelefono(clitelefono);
-		us.setCliafp(cliafp);
-		us.setClisistemasalud(clisistemasalud);
-		us.setClidireccion(clidireccion);
-		us.setClicomuna(clicomuna);
-		us.setCliEdad(CliEdad);
+		Administrativo ad = new Administrativo();
+		ad.setIdadministrativo(idadministrativo);
+		ad.setAdminRun(adminrun);
+		ad.setAdmiNombres(adminombres);
+		ad.setAdminApellidos(adminapellidos);
+		ad.setAdminCorreo(admincorreo);
+		ad.setAdminArea(adminarea);
+		ad.setUsuario_idusuario(usuario_idusuario);
 		
 		
 
 		UsuariosImpl userimpl = new UsuariosImpl();
-		boolean res = userimpl.editarCliente(us);
+		boolean res = userimpl.editarAdministrativo(ad);
 		String msg = "";
 
 		if (res) {

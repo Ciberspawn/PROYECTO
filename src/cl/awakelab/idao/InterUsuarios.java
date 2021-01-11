@@ -21,11 +21,11 @@ public interface InterUsuarios {
 	
 	public boolean editarProfesional(Profesional itemprof);
 	
-	public Cliente obtenerClientePorId(String RutCliente, int cliente_idusuario);
+	public Cliente obtenerClientePorId(int cliente_idusuario);
 	
 	public Profesional obtenerProfesionalPorId(int usuario_idusuario);
 	
-	public Administrativo obtenerAdministrativoPorId(int usuario_idusuario);
+	public Administrativo obtenerAdministrativoPorId(int Usuario_idusuario);
 	
 
 }

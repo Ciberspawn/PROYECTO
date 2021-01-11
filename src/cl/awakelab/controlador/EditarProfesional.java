@@ -7,21 +7,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cl.awakelab.modelo.Cliente;
-import cl.awakelab.modelo.Usuario;
+import cl.awakelab.modelo.Administrativo;
+import cl.awakelab.modelo.Profesional;
 import cl.wakelab.implementacion.UsuariosImpl;
 
 /**
- * Servlet implementation class EditarCliente
+ * Servlet implementation class EditarProfesional
  */
-@WebServlet("/EditarCliente")
-public class EditarCliente extends HttpServlet {
+@WebServlet("/EditarProfesional")
+public class EditarProfesional extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EditarCliente() {
+    public EditarProfesional() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,14 +32,13 @@ public class EditarCliente extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		int cliente_idusuario = Integer.parseInt(request.getParameter("idUsuario"));		
-		
+		int Usuario_idusuario = Integer.parseInt(request.getParameter("idUsuario"));
+
 		UsuariosImpl usimpl = new UsuariosImpl();
-		Cliente useraux = usimpl.obtenerClientePorId(cliente_idusuario);
-		
-		request.setAttribute("us", useraux);
-		request.getRequestDispatcher("EditarCliente.jsp").forward(request, response);
+		Profesional profaux = usimpl.obtenerProfesionalPorId(Usuario_idusuario);
+
+		request.setAttribute("pr", profaux);
+		request.getRequestDispatcher("EditarProfesional.jsp").forward(request, response);
 	}
 
 	/**
@@ -47,8 +46,7 @@ public class EditarCliente extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//doGet(request, response);
-		
+		doGet(request, response);
 	}
 
 }

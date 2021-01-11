@@ -40,20 +40,20 @@
 		<form method="post" action="ClienteEditado">
 			<table class="tablausr-t tablausr-e">	
 					<tr><td>Id Usuario</td><td><input type="text" name="txtidclieuser" id="txtidclieuser" value='<c:out value="${us.getCliente_idusuario()}" />' readonly="readonly" /></td></tr>		
-					<tr><td >RUT</td><td><input type="text" name="txtrutcliente" id="txtrutcliente" value='<c:out value="${us.getRutCliente()}" />' /></td></tr>
-					<tr><td>Nombre</td><td><input type="text" name="txtnomcliente" id="txtnomcliente" value='<c:out value="${us.getClieNombre()}" />' /></td></tr>
-					<tr><td>Apellidos</td><td><input type="text" name="txtapecliente" id="txtapecliente" value='<c:out value="${us.getClieApellidos()}" />'/></td></tr>
-					<tr><td>Teléfono</td><td><input type="text" name="txttelcliente" id="txttelcliente"value='<c:out value="${us.getClieTelefono()}" />' /></td></tr>
-					<tr><td>AFP</td><td><input type="text" name="txtafpcliente" id="txtafpcliente" value='<c:out value="${us.getClieAfp()}" />'/></td></tr>
+					<tr><td >RUT</td><td><input type="text" name="txtrutcliente" id="txtrutcliente" value='<c:out value="${us.getRutCliente()}" />' readonly="readonly"/></td></tr>
+					<tr><td>Nombre</td><td><input type="text" name="txtnomcliente" id="txtnomcliente" value='<c:out value="${us.getClienombres()}" />' /></td></tr>
+					<tr><td>Apellidos</td><td><input type="text" name="txtapecliente" id="txtapecliente" value='<c:out value="${us.getCliapellidos()}" />'/></td></tr>
+					<tr><td>Teléfono</td><td><input type="text" name="txttelcliente" id="txttelcliente"value='<c:out value="${us.getClitelefono()}" />' /></td></tr>
+					<tr><td>AFP</td><td><input type="text" name="txtafpcliente" id="txtafpcliente" value='<c:out value="${us.getCliafp()}" />'/></td></tr>
 						
-					<tr><td>Sistema de Salud</td><td><select name="sisSalud" value='<c:out value="${us.getSistemaSalud()}" />'>
+					<tr><td>Sistema de Salud</td><td><select name="sisSalud" value='<c:out value="${us.getClisistemasalud()}" />'>
 						<option value= "Seleccione"> Seleccione
 						<option value="1">Fonasa
 						<option value="2">Isapre</select></td></tr>
 						
-					<tr><td>Direccion</td><td><input type="text" name="txtdirecccliente" id="txtdirecccliente" value='<c:out value="${us.getClieDireccion()}" />'/></td></tr>
-					<tr><td>Comuna</td><td><input type="text" name="txtcomcliente" id="txtcomcliente" value='<c:out value="${us.getClieComuna()}" />'/></td></tr>
-					<tr><td>Edad</td><td><input type="number" name="txtedadcliente" id="txtedadcliente" value='<c:out value="${us.getClieEdad()}" />' /></td></tr>
+					<tr><td>Direccion</td><td><input type="text" name="txtdirecccliente" id="txtdirecccliente" value='<c:out value="${us.getClidireccion()}" />'/></td></tr>
+					<tr><td>Comuna</td><td><input type="text" name="txtcomcliente" id="txtcomcliente" value='<c:out value="${us.getClicomuna()}" />'/></td></tr>
+					<tr><td>Edad</td><td><input type="number" name="txtedadcliente" id="txtedadcliente" value='<c:out value="${us.getCliEdad()}" />' /></td></tr>
 						
 				
 				

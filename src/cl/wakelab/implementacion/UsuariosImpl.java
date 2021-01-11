@@ -90,14 +90,11 @@ public class UsuariosImpl implements InterUsuarios {
 		Statement stm = null;
 		
 		
-		String sql = "UPDATE cliente SET RutCliente = '"+itemcliente.getRutCliente()+"',ClieNombre ='" + itemcliente.getClieNombre()
-		+ "', ClieApellidos ='" +itemcliente.getClieApellidos()+ "', ClieTelefono='" + itemcliente.getClieTelefono() + "', ClieAfp='"
-		+ itemcliente.getClieAfp() + "', SistemaSalud=" + itemcliente.getSistemaSalud() + ",ClieDireccion='"
-		+ itemcliente.getClieDireccion() + "', ClieComuna='" + itemcliente.getClieComuna() + "',ClieEdad="
-		+ itemcliente.getClieEdad() + " WHERE usuario_idusuario=" +itemcliente.getCliente_idusuario()+ ")";
+		String sql = "UPDATE cliente SET RutCliente ='"+itemcliente.getRutCliente()+"',clienombres ='"+itemcliente.getClienombres()+"', cliapellidos ='"
+				+itemcliente.getCliapellidos()+"', clitelefono='"+itemcliente.getClitelefono()+"', cliafp='"+itemcliente.getCliafp()+"', clisistemasalud="
+				+itemcliente.getClisistemasalud()+",clidireccion='"+itemcliente.getClidireccion()+"', clicomuna='"+itemcliente.getClicomuna()+"',CliEdad="
+				+itemcliente.getCliEdad()+" WHERE usuario_idusuario="+itemcliente.getCliente_idusuario()+")";
 		
-		
-
 try {
 	con = ConexionSingleton.getConnection();
 	stm = con.createStatement();
@@ -116,14 +113,14 @@ return resultado;
 	//*****************************************************************************************************************************
 	//Solicita el rut del cliente que es la llave primaria y el id del usuario que es la llave foránea
 	@Override
-	public Cliente obtenerClientePorId(String RutCliente, int cliente_idusuario) {
+	public Cliente obtenerClientePorId(int cliente_idusuario) {
 		Connection con = null;
 		Statement stm = null;
 		ResultSet rs = null;
 		
 		Cliente c = new Cliente();
 		
-		String sql = "select usuario_idusuario, RutCliente from cliente WHERE RutCliente = "+RutCliente+" and usuario_idusuario = " +cliente_idusuario+ "";
+		String sql = "select rutcliente, clienombres, cliapellidos, clitelefono, cliafp, clisistemasalud, clidireccion, clicomuna, cliedad, usuario_idusuario from cliente WHERE usuario_idusuario = " +cliente_idusuario+ "";
 		
 		try {
 			con = ConexionSingleton.getConnection();
@@ -132,14 +129,14 @@ return resultado;
 			
 			while (rs.next()) {				
 				c.setRutCliente(rs.getString(1));
-				c.setClieNombre(rs.getString(2));
-				c.setClieApellidos(rs.getString(3));
-				c.setClieTelefono(rs.getString(4));
-				c.setClieAfp(rs.getString(5));
-				c.setSistemaSalud(rs.getInt(6));				
-				c.setClieDireccion(rs.getString(7));
-				c.setClieComuna(rs.getString(8));
-				c.setClieEdad(rs.getInt(9));
+				c.setClienombres(rs.getString(2));
+				c.setCliapellidos(rs.getString(3));
+				c.setClitelefono(rs.getString(4));
+				c.setCliafp(rs.getString(5));
+				c.setClisistemasalud(rs.getInt(6));				
+				c.setClidireccion(rs.getString(7));
+				c.setClicomuna(rs.getString(8));
+				c.setCliEdad(rs.getInt(9));
 				c.setCliente_idusuario(rs.getInt(10));
 			}
 		}
@@ -162,8 +159,8 @@ return resultado;
 		
 		String sql = "UPDATE cliente SET Admin_id="
 				+ itemadmin.getIdadministrativo() + " AdminRun ='"				 
-				+ itemadmin.getAdminRun() + "',AdminNombres='" 
-				+ itemadmin.getAdminNombres() + "',AdminApellidos='" 
+				+ itemadmin.getAdminRun() + "',Adminombres='" 
+				+ itemadmin.getAdmiNombres() + "',AdminApellidos='" 
 				+ itemadmin.getAdminApellidos() + "',AdminCorreo='" 
 				+ itemadmin.getAdminCorreo()+ "',AdminArea='" 
 				+ itemadmin.getAdminArea()+"'WHERE Usuario_idusuario ="
@@ -187,28 +184,28 @@ return resultado;
 	//*******************************************************************************************************************************
 	//Obtener usuario administrativo por id para editar 
 	@Override
-	public Administrativo obtenerAdministrativoPorId(int usuario_idusuario) {
+	public Administrativo obtenerAdministrativoPorId(int Usuario_idusuario) {
 		Connection con = null;
 		Statement stm = null;
 		ResultSet rs = null;
 		
 		Administrativo a = new Administrativo();
 		
-		String sql = "select * from administrativo where usuario_idusuario = "+usuario_idusuario+"";
+		String sql = "select idadministrativo, AdminRun, AdmiNombres,AdminApellidos, AdminCorreo,AdminArea, Usuario_idusuario from administrativo where Usuario_idusuario = "+Usuario_idusuario+"";
 		
 		try {
 			con = ConexionSingleton.getConnection();
 			stm = con.createStatement();
 			rs = stm.executeQuery(sql);
 			
-			while (rs.next()) {
-				a.setUsuario_idusuario(rs.getInt(1));
-				a.setIdadministrativo(rs.getInt(2));
-				a.setAdminRun(rs.getString(3));
-				a.setAdminNombres(rs.getString(4));
-				a.setAdminApellidos(rs.getString(5));
-				a.setAdminCorreo(rs.getString(6));
-				a.setAdminArea(rs.getString(7));
+			while (rs.next()) {				
+				a.setIdadministrativo(rs.getInt(1));
+				a.setAdminRun(rs.getString(2));
+				a.setAdmiNombres(rs.getString(3));
+				a.setAdminApellidos(rs.getString(4));
+				a.setAdminCorreo(rs.getString(5));
+				a.setAdminArea(rs.getString(6));
+				a.setUsuario_idusuario(rs.getInt(7));
 				
 			}
 		}
@@ -266,21 +263,21 @@ return resultado;
 		
 		Profesional p = new Profesional();
 		
-		String sql = "select * from profesional where usuario_idusuario = "+ usuario_idusuario+"";
+		String sql = "select idprofesional, profrun, profnombres, profapellidos, proftelefono, proftitulo, profproyecto from profesional where usuario_idusuario = "+ usuario_idusuario+"";
 		
 		try {
 			con = ConexionSingleton.getConnection();
 			stm = con.createStatement();
 			rs = stm.executeQuery(sql);
 			
-			while (rs.next()) {
-				p.setUsuario_idusuario(rs.getInt(1));
-				p.setIdProfesional(rs.getInt(2));
-				p.setProfRun(rs.getString(3));
-				p.setProfNombres(rs.getString(4));
-				p.setProfApellidos(rs.getString(5));
-				p.setProfTitulo(rs.getString(6));
-				p.setProfProyecto(rs.getString(7));
+			while (rs.next()) {				
+				p.setIdProfesional(rs.getInt(1));
+				p.setProfRun(rs.getString(2));
+				p.setProfNombres(rs.getString(3));
+				p.setProfApellidos(rs.getString(4));
+				p.setProfTitulo(rs.getString(5));
+				p.setProfProyecto(rs.getString(6));
+				p.setUsuario_idusuario(rs.getInt(7));
 				
 			}
 		}

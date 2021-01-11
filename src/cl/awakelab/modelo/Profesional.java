@@ -18,8 +18,7 @@ public class Profesional  {
 	private String ProfTitulo;
 	private String ProfProyecto;
 	private int usuario_idusuario;
-	private String UserNombre;
-	private String UserApellido;
+	
 	
 	
 	public Profesional() {
@@ -27,8 +26,9 @@ public class Profesional  {
 	}
 
 
+
 	public Profesional(int idProfesional, String profRun, String profNombres, String profApellidos, String profTelefono,
-			String profTitulo, String profProyecto, int usuario_idusuario, String userNombre, String userApellido) {
+			String profTitulo, String profProyecto, int usuario_idusuario) {
 		super();
 		this.idProfesional = idProfesional;
 		ProfRun = profRun;
@@ -38,9 +38,8 @@ public class Profesional  {
 		ProfTitulo = profTitulo;
 		ProfProyecto = profProyecto;
 		this.usuario_idusuario = usuario_idusuario;
-		UserNombre = userNombre;
-		UserApellido = userApellido;
 	}
+
 
 
 	public int getIdProfesional() {
@@ -48,9 +47,11 @@ public class Profesional  {
 	}
 
 
+
 	public void setIdProfesional(int idProfesional) {
 		this.idProfesional = idProfesional;
 	}
+
 
 
 	public String getProfRun() {
@@ -58,9 +59,11 @@ public class Profesional  {
 	}
 
 
+
 	public void setProfRun(String profRun) {
 		ProfRun = profRun;
 	}
+
 
 
 	public String getProfNombres() {
@@ -68,9 +71,11 @@ public class Profesional  {
 	}
 
 
+
 	public void setProfNombres(String profNombres) {
 		ProfNombres = profNombres;
 	}
+
 
 
 	public String getProfApellidos() {
@@ -78,9 +83,11 @@ public class Profesional  {
 	}
 
 
+
 	public void setProfApellidos(String profApellidos) {
 		ProfApellidos = profApellidos;
 	}
+
 
 
 	public String getProfTelefono() {
@@ -88,9 +95,11 @@ public class Profesional  {
 	}
 
 
+
 	public void setProfTelefono(String profTelefono) {
 		ProfTelefono = profTelefono;
 	}
+
 
 
 	public String getProfTitulo() {
@@ -98,9 +107,11 @@ public class Profesional  {
 	}
 
 
+
 	public void setProfTitulo(String profTitulo) {
 		ProfTitulo = profTitulo;
 	}
+
 
 
 	public String getProfProyecto() {
@@ -108,9 +119,11 @@ public class Profesional  {
 	}
 
 
+
 	public void setProfProyecto(String profProyecto) {
 		ProfProyecto = profProyecto;
 	}
+
 
 
 	public int getUsuario_idusuario() {
@@ -118,39 +131,19 @@ public class Profesional  {
 	}
 
 
+
 	public void setUsuario_idusuario(int usuario_idusuario) {
 		this.usuario_idusuario = usuario_idusuario;
 	}
 
-
-	public String getUserNombre() {
-		return UserNombre;
-	}
-
-
-	public void setUserNombre(String userNombre) {
-		UserNombre = userNombre;
-	}
-
-
-	public String getUserApellido() {
-		return UserApellido;
-	}
-
-
-	public void setUserApellido(String userApellido) {
-		UserApellido = userApellido;
-	}
 
 
 	@Override
 	public String toString() {
 		return "Profesional [idProfesional=" + idProfesional + ", ProfRun=" + ProfRun + ", ProfNombres=" + ProfNombres
 				+ ", ProfApellidos=" + ProfApellidos + ", ProfTelefono=" + ProfTelefono + ", ProfTitulo=" + ProfTitulo
-				+ ", ProfProyecto=" + ProfProyecto + ", usuario_idusuario=" + usuario_idusuario + ", UserNombre="
-				+ UserNombre + ", UserApellido=" + UserApellido + "]";
+				+ ", ProfProyecto=" + ProfProyecto + ", usuario_idusuario=" + usuario_idusuario + "]";
 	}
-
 
 
 }

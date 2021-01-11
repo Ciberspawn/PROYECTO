@@ -7,20 +7,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cl.awakelab.modelo.Cliente;
+import cl.awakelab.modelo.Administrativo;
+import cl.awakelab.modelo.Profesional;
 import cl.wakelab.implementacion.UsuariosImpl;
 
 /**
- * Servlet implementation class ClienteEditado
+ * Servlet implementation class ProfesionalEditado
  */
-@WebServlet("/ClienteEditado")
-public class ClienteEditado extends HttpServlet {
+@WebServlet("/ProfesionalEditado")
+public class ProfesionalEditado extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ClienteEditado() {
+    public ProfesionalEditado() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,35 +41,30 @@ public class ClienteEditado extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		
-		
-		String RutCliente = request.getParameter("txtrutcliente");
-		String clienombres = request.getParameter("txtnomcliente");
-		String cliapellidos = request.getParameter("txtapecliente");
-		String clitelefono = request.getParameter("txttelcliente");
-		String cliafp = request.getParameter("txtafpcliente");
-		int clisistemasalud = Integer.parseInt(request.getParameter("sisSalud"));
-		String clidireccion = request.getParameter("txtdirecccliente");
-		String clicomuna = request.getParameter("txtcomcliente");
-		int CliEdad = Integer.parseInt(request.getParameter("txtedadcliente"));
-		int usuario_idusuario = Integer.parseInt(request.getParameter("txtidclieuser"));
+		int idProfesional = Integer.parseInt(request.getParameter("txtidprof"));
+		String ProfRun = request.getParameter("txtrutprof");
+		String ProfNombres = request.getParameter("txtnomprof");
+		String ProfApellidos = request.getParameter("txtapeprof");
+		String ProfTelefono = request.getParameter("txttelprof");
+		String ProfTitulo = request.getParameter("txttitulo");
+		String ProfProyecto = request.getParameter("txtproyecto");
+		int usuario_idusuario = Integer.parseInt(request.getParameter("txtiduser"));
 		
 
-		Cliente us = new Cliente();
-		us.setCliente_idusuario(usuario_idusuario);
-		us.setRutCliente(RutCliente);
-		us.setClienombres(clienombres);
-		us.setCliapellidos(cliapellidos);
-		us.setClitelefono(clitelefono);
-		us.setCliafp(cliafp);
-		us.setClisistemasalud(clisistemasalud);
-		us.setClidireccion(clidireccion);
-		us.setClicomuna(clicomuna);
-		us.setCliEdad(CliEdad);
+		Profesional pr = new Profesional();
+		pr.setIdProfesional(idProfesional);
+		pr.setProfRun(ProfRun);
+		pr.setProfNombres(ProfNombres);
+		pr.setProfApellidos(ProfApellidos);
+		pr.setProfTelefono(ProfTelefono);
+		pr.setProfTitulo(ProfTitulo);
+		pr.setProfProyecto(ProfProyecto);
+		pr.setUsuario_idusuario(usuario_idusuario);
 		
 		
 
 		UsuariosImpl userimpl = new UsuariosImpl();
-		boolean res = userimpl.editarCliente(us);
+		boolean res = userimpl.editarProfesional(pr);
 		String msg = "";
 
 		if (res) {
@@ -79,7 +75,6 @@ public class ClienteEditado extends HttpServlet {
 
 		request.setAttribute("mensaje", msg);
 		request.getRequestDispatcher("msgcreacion.jsp").forward(request, response);
-
 	}
 
 }

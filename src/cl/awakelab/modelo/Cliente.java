@@ -11,14 +11,14 @@ public class Cliente  {
 	/** Atributos de la clase encapsulados */
 
 	private String RutCliente;
-	private String ClieNombre;
-	private String ClieApellidos;
-	private String ClieTelefono;
-	private String ClieAfp;
-	private int SistemaSalud;
-	private String ClieDireccion;
-	private String ClieComuna;
-	private int ClieEdad;
+	private String clienombres;
+	private String cliapellidos;
+	private String clitelefono;
+	private String cliafp;
+	private int clisistemasalud;
+	private String clidireccion;
+	private String clicomuna;
+	private int CliEdad;
 	private int cliente_idusuario;
 	
 	
@@ -29,18 +29,18 @@ public class Cliente  {
 
 
 
-	public Cliente(String rutCliente, String clieNombre, String clieApellidos, String clieTelefono, String clieAfp,
-			int sistemaSalud, String clieDireccion, String clieComuna, int clieEdad, int cliente_idusuario) {
+	public Cliente(String rutCliente, String clienombres, String cliapellidos, String clitelefono, String cliafp,
+			int clisistemasalud, String clidireccion, String clicomuna, int cliEdad, int cliente_idusuario) {
 		super();
 		RutCliente = rutCliente;
-		ClieNombre = clieNombre;
-		ClieApellidos = clieApellidos;
-		ClieTelefono = clieTelefono;
-		ClieAfp = clieAfp;
-		SistemaSalud = sistemaSalud;
-		ClieDireccion = clieDireccion;
-		ClieComuna = clieComuna;
-		ClieEdad = clieEdad;
+		this.clienombres = clienombres;
+		this.cliapellidos = cliapellidos;
+		this.clitelefono = clitelefono;
+		this.cliafp = cliafp;
+		this.clisistemasalud = clisistemasalud;
+		this.clidireccion = clidireccion;
+		this.clicomuna = clicomuna;
+		CliEdad = cliEdad;
 		this.cliente_idusuario = cliente_idusuario;
 	}
 
@@ -58,98 +58,98 @@ public class Cliente  {
 
 
 
-	public String getClieNombre() {
-		return ClieNombre;
+	public String getClienombres() {
+		return clienombres;
 	}
 
 
 
-	public void setClieNombre(String clieNombre) {
-		ClieNombre = clieNombre;
+	public void setClienombres(String clienombres) {
+		this.clienombres = clienombres;
 	}
 
 
 
-	public String getClieApellidos() {
-		return ClieApellidos;
+	public String getCliapellidos() {
+		return cliapellidos;
 	}
 
 
 
-	public void setClieApellidos(String clieApellidos) {
-		ClieApellidos = clieApellidos;
+	public void setCliapellidos(String cliapellidos) {
+		this.cliapellidos = cliapellidos;
 	}
 
 
 
-	public String getClieTelefono() {
-		return ClieTelefono;
+	public String getClitelefono() {
+		return clitelefono;
 	}
 
 
 
-	public void setClieTelefono(String clieTelefono) {
-		ClieTelefono = clieTelefono;
+	public void setClitelefono(String clitelefono) {
+		this.clitelefono = clitelefono;
 	}
 
 
 
-	public String getClieAfp() {
-		return ClieAfp;
+	public String getCliafp() {
+		return cliafp;
 	}
 
 
 
-	public void setClieAfp(String clieAfp) {
-		ClieAfp = clieAfp;
+	public void setCliafp(String cliafp) {
+		this.cliafp = cliafp;
 	}
 
 
 
-	public int getSistemaSalud() {
-		return SistemaSalud;
+	public int getClisistemasalud() {
+		return clisistemasalud;
 	}
 
 
 
-	public void setSistemaSalud(int sistemaSalud) {
-		SistemaSalud = sistemaSalud;
+	public void setClisistemasalud(int clisistemasalud) {
+		this.clisistemasalud = clisistemasalud;
 	}
 
 
 
-	public String getClieDireccion() {
-		return ClieDireccion;
+	public String getClidireccion() {
+		return clidireccion;
 	}
 
 
 
-	public void setClieDireccion(String clieDireccion) {
-		ClieDireccion = clieDireccion;
+	public void setClidireccion(String clidireccion) {
+		this.clidireccion = clidireccion;
 	}
 
 
 
-	public String getClieComuna() {
-		return ClieComuna;
+	public String getClicomuna() {
+		return clicomuna;
 	}
 
 
 
-	public void setClieComuna(String clieComuna) {
-		ClieComuna = clieComuna;
+	public void setClicomuna(String clicomuna) {
+		this.clicomuna = clicomuna;
 	}
 
 
 
-	public int getClieEdad() {
-		return ClieEdad;
+	public int getCliEdad() {
+		return CliEdad;
 	}
 
 
 
-	public void setClieEdad(int clieEdad) {
-		ClieEdad = clieEdad;
+	public void setCliEdad(int cliEdad) {
+		CliEdad = cliEdad;
 	}
 
 
@@ -168,11 +168,13 @@ public class Cliente  {
 
 	@Override
 	public String toString() {
-		return "Cliente [RutCliente=" + RutCliente + ", ClieNombre=" + ClieNombre + ", ClieApellidos=" + ClieApellidos
-				+ ", ClieTelefono=" + ClieTelefono + ", ClieAfp=" + ClieAfp + ", SistemaSalud=" + SistemaSalud
-				+ ", ClieDireccion=" + ClieDireccion + ", ClieComuna=" + ClieComuna + ", ClieEdad=" + ClieEdad
+		return "Cliente [RutCliente=" + RutCliente + ", clienombres=" + clienombres + ", cliapellidos=" + cliapellidos
+				+ ", clitelefono=" + clitelefono + ", cliafp=" + cliafp + ", clisistemasalud=" + clisistemasalud
+				+ ", clidireccion=" + clidireccion + ", clicomuna=" + clicomuna + ", CliEdad=" + CliEdad
 				+ ", cliente_idusuario=" + cliente_idusuario + "]";
 	}
 
 
+
+	
 }
