@@ -19,7 +19,7 @@ public class Cliente  {
 	private String ClieDireccion;
 	private String ClieComuna;
 	private int ClieEdad;
-	private int usuario_idusuario;
+	private int cliente_idusuario;
 	
 	
 	
@@ -30,7 +30,7 @@ public class Cliente  {
 
 
 	public Cliente(String rutCliente, String clieNombre, String clieApellidos, String clieTelefono, String clieAfp,
-			int sistemaSalud, String clieDireccion, String clieComuna, int clieEdad, int usuario_idusuario) {
+			int sistemaSalud, String clieDireccion, String clieComuna, int clieEdad, int cliente_idusuario) {
 		super();
 		RutCliente = rutCliente;
 		ClieNombre = clieNombre;
@@ -41,7 +41,7 @@ public class Cliente  {
 		ClieDireccion = clieDireccion;
 		ClieComuna = clieComuna;
 		ClieEdad = clieEdad;
-		this.usuario_idusuario = usuario_idusuario;
+		this.cliente_idusuario = cliente_idusuario;
 	}
 
 
@@ -154,14 +154,14 @@ public class Cliente  {
 
 
 
-	public int getUsuario_idusuario() {
-		return usuario_idusuario;
+	public int getCliente_idusuario() {
+		return cliente_idusuario;
 	}
 
 
 
-	public void setUsuario_idusuario(int usuario_idusuario) {
-		this.usuario_idusuario = usuario_idusuario;
+	public void setCliente_idusuario(int cliente_idusuario) {
+		this.cliente_idusuario = cliente_idusuario;
 	}
 
 
@@ -171,9 +171,8 @@ public class Cliente  {
 		return "Cliente [RutCliente=" + RutCliente + ", ClieNombre=" + ClieNombre + ", ClieApellidos=" + ClieApellidos
 				+ ", ClieTelefono=" + ClieTelefono + ", ClieAfp=" + ClieAfp + ", SistemaSalud=" + SistemaSalud
 				+ ", ClieDireccion=" + ClieDireccion + ", ClieComuna=" + ClieComuna + ", ClieEdad=" + ClieEdad
-				+ ", usuario_idusuario=" + usuario_idusuario + "]";
+				+ ", cliente_idusuario=" + cliente_idusuario + "]";
 	}
 
 
-	
 }

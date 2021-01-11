@@ -50,7 +50,7 @@ public class GuardarUsuario extends HttpServlet {
 		// TODO Auto-generated method stub
 		// doGet(request, response);
 
-		UsuariosImpl userimpl = new UsuariosImpl();
+		
 		
 
 		int iDUsuario = Integer.parseInt(request.getParameter("txtiduser"));
@@ -61,6 +61,8 @@ public class GuardarUsuario extends HttpServlet {
 		String UserTipo = request.getParameter("txttipouser");
 
 		Usuario us = new Usuario(iDUsuario, userRun, userNombre, userApellidos, UserFechaNacimiento, UserTipo);
+		
+		UsuariosImpl userimpl = new UsuariosImpl();
 		boolean res = userimpl.crearUsuario(us);
 		String msg = "";
 

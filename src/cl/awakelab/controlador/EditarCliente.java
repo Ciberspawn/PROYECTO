@@ -7,6 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cl.awakelab.modelo.Cliente;
+import cl.awakelab.modelo.Usuario;
+import cl.wakelab.implementacion.UsuariosImpl;
+
 /**
  * Servlet implementation class EditarCliente
  */
@@ -28,6 +32,15 @@ public class EditarCliente extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		int cliente_idusuario = Integer.parseInt(request.getParameter("idUsuario"));		
+		String RutCliente = request.getParameter("RutCliente");
+		
+		UsuariosImpl usimpl = new UsuariosImpl();
+		Cliente useraux = usimpl.obtenerClientePorId(RutCliente,cliente_idusuario);
+		
+	
+		request.setAttribute("us", useraux);
 		request.getRequestDispatcher("EditarCliente.jsp").forward(request, response);
 	}
 

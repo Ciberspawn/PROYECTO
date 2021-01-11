@@ -4,7 +4,7 @@ package cl.awakelab.modelo;
 public class Administrativo {
 	
 	/** Atributos de la clase encapsulados */
-	private int Admin_id;
+	private int idadministrativo;
 	private String AdminRun;
 	private String AdminNombres;
 	private String AdminApellidos;
@@ -20,10 +20,10 @@ public class Administrativo {
 
 
 
-	public Administrativo(int admin_id, String adminRun, String adminNombres, String adminApellidos, String adminCorreo,
-			String adminArea, int usuario_idusuario) {
+	public Administrativo(int idadministrativo, String adminRun, String adminNombres, String adminApellidos,
+			String adminCorreo, String adminArea, int usuario_idusuario) {
 		super();
-		Admin_id = admin_id;
+		this.idadministrativo = idadministrativo;
 		AdminRun = adminRun;
 		AdminNombres = adminNombres;
 		AdminApellidos = adminApellidos;
@@ -34,14 +34,14 @@ public class Administrativo {
 
 
 
-	public int getAdmin_id() {
-		return Admin_id;
+	public int getIdadministrativo() {
+		return idadministrativo;
 	}
 
 
 
-	public void setAdmin_id(int admin_id) {
-		Admin_id = admin_id;
+	public void setIdadministrativo(int idadministrativo) {
+		this.idadministrativo = idadministrativo;
 	}
 
 
@@ -120,10 +120,11 @@ public class Administrativo {
 
 	@Override
 	public String toString() {
-		return "Administrativo [Admin_id=" + Admin_id + ", AdminRun=" + AdminRun + ", AdminNombres=" + AdminNombres
-				+ ", AdminApellidos=" + AdminApellidos + ", AdminCorreo=" + AdminCorreo + ", AdminArea=" + AdminArea
-				+ ", usuario_idusuario=" + usuario_idusuario + "]";
+		return "Administrativo [idadministrativo=" + idadministrativo + ", AdminRun=" + AdminRun + ", AdminNombres="
+				+ AdminNombres + ", AdminApellidos=" + AdminApellidos + ", AdminCorreo=" + AdminCorreo + ", AdminArea="
+				+ AdminArea + ", usuario_idusuario=" + usuario_idusuario + "]";
 	}
+
 
 
 	

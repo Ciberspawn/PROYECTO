@@ -14,18 +14,18 @@ public interface InterUsuarios {
 	
 	public boolean crearUsuario(Usuario itemuser);
 	
-	public boolean editarCliente(Usuario itemuser, Cliente itemcliente);
+	public boolean editarCliente(Cliente itemcliente);
 	
 	
-	public boolean editarAdministrativo(Usuario itemuser, Administrativo itemadmin);
+	public boolean editarAdministrativo(Administrativo itemadmin);
 	
-	public boolean editarProfesional(Usuario itemuser, Profesional itemprof);
+	public boolean editarProfesional(Profesional itemprof);
 	
-	public Cliente obtenerClientePorId(String RutCliente, int usuario_idusuario);
+	public Cliente obtenerClientePorId(String RutCliente, int cliente_idusuario);
 	
-	public Profesional obtenerProfesionalPorId(int idProfesional, int usuario_idusuario);
+	public Profesional obtenerProfesionalPorId(int usuario_idusuario);
 	
-	public Administrativo obtenerAdministrativoPorId(int Admin_id, int usuario_idusuario);
+	public Administrativo obtenerAdministrativoPorId(int usuario_idusuario);
 	
 
 }

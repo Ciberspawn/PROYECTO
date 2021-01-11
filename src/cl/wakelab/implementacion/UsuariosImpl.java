@@ -84,17 +84,17 @@ public class UsuariosImpl implements InterUsuarios {
 	//********************************************************************************************************************
 	//Conexión a la base de datos y editar la usuario tipo cliente
 	@Override
-	public boolean editarCliente(Usuario itemuser, Cliente itemcliente) {
+	public boolean editarCliente(Cliente itemcliente) {
 		boolean resultado = false;
 		Connection con = null;
 		Statement stm = null;
 		
 		
-		String sql = "UPDATE cliente SET ClieNombre ='" + itemcliente.getClieNombre()
-		+ "', ClieApellidos ='" + itemcliente.getClieApellidos() + "', ClieTelefono='" + itemcliente.getClieTelefono() + "', ClieAfp='"
+		String sql = "UPDATE cliente SET RutCliente = '"+itemcliente.getRutCliente()+"',ClieNombre ='" + itemcliente.getClieNombre()
+		+ "', ClieApellidos ='" +itemcliente.getClieApellidos()+ "', ClieTelefono='" + itemcliente.getClieTelefono() + "', ClieAfp='"
 		+ itemcliente.getClieAfp() + "', SistemaSalud=" + itemcliente.getSistemaSalud() + ",ClieDireccion='"
 		+ itemcliente.getClieDireccion() + "', ClieComuna='" + itemcliente.getClieComuna() + "',ClieEdad="
-		+ itemcliente.getClieEdad() + " WHERE RutCliente=" +itemcliente.getRutCliente()+ " and Usuario_idusuario='" +itemcliente.getUsuario_idusuario() + "')";
+		+ itemcliente.getClieEdad() + " WHERE usuario_idusuario=" +itemcliente.getCliente_idusuario()+ ")";
 		
 		
 
@@ -116,31 +116,31 @@ return resultado;
 	//*****************************************************************************************************************************
 	//Solicita el rut del cliente que es la llave primaria y el id del usuario que es la llave foránea
 	@Override
-	public Cliente obtenerClientePorId(String RutCliente, int usuario_idusuario) {
+	public Cliente obtenerClientePorId(String RutCliente, int cliente_idusuario) {
 		Connection con = null;
 		Statement stm = null;
 		ResultSet rs = null;
 		
 		Cliente c = new Cliente();
 		
-		String sql = "select * from cliente where RutCliente = '" + RutCliente  + "' and usuario_idusuario = "+usuario_idusuario+"";
+		String sql = "select usuario_idusuario, RutCliente from cliente WHERE RutCliente = "+RutCliente+" and usuario_idusuario = " +cliente_idusuario+ "";
 		
 		try {
 			con = ConexionSingleton.getConnection();
 			stm = con.createStatement();
 			rs = stm.executeQuery(sql);
 			
-			while (rs.next()) {
-				c.setUsuario_idusuario(rs.getInt(1));
-				c.setRutCliente(rs.getString(2));
-				c.setClieNombre(rs.getString(3));
-				c.setClieApellidos(rs.getString(4));
+			while (rs.next()) {				
+				c.setRutCliente(rs.getString(1));
+				c.setClieNombre(rs.getString(2));
+				c.setClieApellidos(rs.getString(3));
+				c.setClieTelefono(rs.getString(4));
 				c.setClieAfp(rs.getString(5));
-				c.setSistemaSalud(rs.getInt(6));
-				c.setClieTelefono(rs.getString(7));
-				c.setClieDireccion(rs.getString(8));
-				c.setClieComuna(rs.getString(9));
-				c.setClieEdad(rs.getInt(10));
+				c.setSistemaSalud(rs.getInt(6));				
+				c.setClieDireccion(rs.getString(7));
+				c.setClieComuna(rs.getString(8));
+				c.setClieEdad(rs.getInt(9));
+				c.setCliente_idusuario(rs.getInt(10));
 			}
 		}
 		catch(Exception e) {
@@ -154,23 +154,20 @@ return resultado;
 	//Conexión a la base de datos y editar al usuario tipo Administrativo
 
 	@Override
-	public boolean editarAdministrativo(Usuario itemuser, Administrativo itemadmin) {
+	public boolean editarAdministrativo(Administrativo itemadmin) {
 		boolean resultado = false;
 		Connection con = null;
 		Statement stm = null;
 
 		
-		String sql = "UPDATE cliente SET AdminRun ='"				 
+		String sql = "UPDATE cliente SET Admin_id="
+				+ itemadmin.getIdadministrativo() + " AdminRun ='"				 
 				+ itemadmin.getAdminRun() + "',AdminNombres='" 
 				+ itemadmin.getAdminNombres() + "',AdminApellidos='" 
 				+ itemadmin.getAdminApellidos() + "',AdminCorreo='" 
 				+ itemadmin.getAdminCorreo()+ "',AdminArea='" 
-				+ itemadmin.getAdminArea()+"'WHERE Admin_id="
-				+ itemadmin.getAdmin_id() + " and  Usuario_idusuario ="
+				+ itemadmin.getAdminArea()+"'WHERE Usuario_idusuario ="
 				+ itemadmin.getUsuario_idusuario()+")";
-		
-		
-		
 		try {
 			con = ConexionSingleton.getConnection();
 			stm = con.createStatement();
@@ -190,14 +187,14 @@ return resultado;
 	//*******************************************************************************************************************************
 	//Obtener usuario administrativo por id para editar 
 	@Override
-	public Administrativo obtenerAdministrativoPorId(int Admin_id, int usuario_idusuario) {
+	public Administrativo obtenerAdministrativoPorId(int usuario_idusuario) {
 		Connection con = null;
 		Statement stm = null;
 		ResultSet rs = null;
 		
 		Administrativo a = new Administrativo();
 		
-		String sql = "select * from administrativo where Admin_id = " + Admin_id  + " and usuario_idusuario = "+usuario_idusuario+"";
+		String sql = "select * from administrativo where usuario_idusuario = "+usuario_idusuario+"";
 		
 		try {
 			con = ConexionSingleton.getConnection();
@@ -206,7 +203,7 @@ return resultado;
 			
 			while (rs.next()) {
 				a.setUsuario_idusuario(rs.getInt(1));
-				a.setAdmin_id(rs.getInt(2));
+				a.setIdadministrativo(rs.getInt(2));
 				a.setAdminRun(rs.getString(3));
 				a.setAdminNombres(rs.getString(4));
 				a.setAdminApellidos(rs.getString(5));
@@ -227,19 +224,19 @@ return resultado;
 	//Conexión a la base de datos y editar la usuario tipo Profesional
 
 	@Override
-	public boolean editarProfesional(Usuario itemuser, Profesional itemprof) {
+	public boolean editarProfesional(Profesional itemprof) {
 		boolean resultado = false;
 		Connection con = null;
 		Statement stm = null;
 
-		String sql = "UPDATE cliente SET ProfRun ='"					
+		String sql = "UPDATE cliente SET IdProfesional= "
+					+ itemprof.getIdProfesional() + ", ProfRun ='"					
 					+ itemprof.getProfRun() + "', ProfNombres='" 
 					+ itemprof.getProfNombres() + "', ProfApellidos='" 
 					+ itemprof.getProfApellidos() + "', ProfTelefono='" 
 					+ itemprof.getProfTelefono() + "',ProfTitulo='" 
 					+ itemprof.getProfTitulo()+ "',ProfProyecto='"
-					+ itemprof.getProfProyecto()+"'WHERE IdProfesional= "
-					+ itemprof.getIdProfesional() + " and Usuario_idusuario="
+					+ itemprof.getProfProyecto()+"'	WHERE  Usuario_idusuario="
 					+ itemprof.getUsuario_idusuario()+")";
 		
 		 
@@ -262,14 +259,14 @@ return resultado;
 	//*******************************************************************************************************************************
     //Obtener usuario administrativo por id para editar 
 	@Override
-	public Profesional obtenerProfesionalPorId(int idProfesional, int usuario_idusuario) {
+	public Profesional obtenerProfesionalPorId(int usuario_idusuario) {
 		Connection con = null;
 		Statement stm = null;
 		ResultSet rs = null;
 		
 		Profesional p = new Profesional();
 		
-		String sql = "select * from profesional where idProfesional = " + idProfesional  + " and usuario_idusuario = "+ usuario_idusuario+"";
+		String sql = "select * from profesional where usuario_idusuario = "+ usuario_idusuario+"";
 		
 		try {
 			con = ConexionSingleton.getConnection();

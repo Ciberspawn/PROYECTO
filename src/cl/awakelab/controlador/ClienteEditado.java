@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cl.awakelab.modelo.Cliente;
+import cl.wakelab.implementacion.UsuariosImpl;
+
 /**
  * Servlet implementation class ClienteEditado
  */
@@ -35,7 +38,47 @@ public class ClienteEditado extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
+		
+		
+		String RutCliente = request.getParameter("txtrutcliente");
+		String ClieNombre = request.getParameter("txtnomcliente");
+		String ClieApellidos = request.getParameter("txtapecliente");
+		String ClieTelefono = request.getParameter("txttelcliente");
+		String ClieAfp = request.getParameter("txtafpcliente");
+		int SistemaSalud = Integer.parseInt(request.getParameter("sisSalud"));
+		String ClieDireccion = request.getParameter("txtdirecccliente");
+		String ClieComuna = request.getParameter("txtcomcliente");
+		int ClieEdad = Integer.parseInt(request.getParameter("txtedadcliente"));
+		int usuario_idusuario = Integer.parseInt(request.getParameter("txtidclieuser"));
+		
+
+		Cliente clie = new Cliente();
+		clie.setCliente_idusuario(usuario_idusuario);
+		clie.setRutCliente(RutCliente);
+		clie.setClieNombre(ClieNombre);
+		clie.setClieApellidos(ClieApellidos);
+		clie.setClieTelefono(ClieTelefono);		
+		clie.setClieAfp(ClieAfp);
+		clie.setSistemaSalud(SistemaSalud);
+		clie.setClieDireccion(ClieDireccion);
+		clie.setClieComuna(ClieComuna);
+		clie.setClieEdad(ClieEdad);
+		
+
+		UsuariosImpl userimpl = new UsuariosImpl();
+		boolean res = userimpl.editarCliente(clie);
+		String msg = "";
+
+		if (res) {
+			msg = "El cliente se editó exitosamente";
+		} else {
+			msg = "El cliente no se pudo editó porque ocurrió un error";
+		}
+
+		request.setAttribute("mensaje", msg);
+		request.getRequestDispatcher("msgcreacion.jsp").forward(request, response);
+
 	}
 
 }

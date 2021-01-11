@@ -211,6 +211,20 @@ $(document).ready(function() {
 
 });
 
+function cargartipo(){
+	var tipo = document.getElementById("tipo");
+	var a = "";
+	
+	if(a.equals('Cliente')){
+     response.sendRedirect(request.getContextPath() + "/Editarcliente");
+	}else if(a.equals('Profesional')){
+		response.sendRedirect(request.getContextPath() + "/EditarProfesional");
+	}else if(a.equals('Administrativo')){
+		response.sendRedirect(request.getContextPath() + "/EditarAdministrativo");
+	}
+}
+
+
 //funciones para listadopago.html
 function RangoMesAnio(desde, hasta) {
 	for (i = 0; i < hasta; i++)

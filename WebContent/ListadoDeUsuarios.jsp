@@ -56,15 +56,22 @@
 				<td><c:out value="${lus.getUsernombre()}" /></td>
 				<td><c:out value="${lus.getUserapellidos()}" /></td>
 				<td><c:out value="${lus.getUserFechaNacimiento()}" /></td>
-				<td><c:out value="${lus.getUserTipo()}"  /></td>
-				<td><input type="button" value="Editar" name="Editar" id="editar" /></td>
+				<td id="tipo"><c:out value="${lus.getUserTipo()}"  /></td>
 				
-								
+				<c:if test="${lus.getUserTipo()=='Cliente' }">
+				<td><a href="EditarCliente?idUsuario=<c:out value='${lus.getIdUsuario()}'/>">Editar</a></td>				
+				</c:if>	
+						<c:if test="${lus.getUserTipo()=='Administrativo' }">
+				<td><a href="EditarAdministrativo?idUsuario=<c:out value='${lus.getIdUsuario()}'/>">Editar</a></td>				
+				</c:if>	
+				<c:if test="${lus.getUserTipo()=='Profesional' }">
+				<td><a href="EditarProfesional?idUsuario=<c:out value='${lus.getIdUsuario()}'/>">Editar</a></td>				
+				</c:if>		
 			</tr>
 			
-			</c:forEach>
-						
+			</c:forEach>						
 			
+
 		</table>
 
 	</fieldset>
