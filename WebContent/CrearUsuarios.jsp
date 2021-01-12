@@ -22,6 +22,7 @@
 				class="icon-menu" for="check"></label>
 			<nav class="menu">
 				<ul>
+				<li><a href="<%=request.getContextPath()%>/Login">Login</a></li>
 					<li><a href="<%=request.getContextPath()%>/Contacto">Contacto</a></li>
 
 					<li><a href="<%=request.getContextPath()%>/CrearCapacitacion">Crear
@@ -29,8 +30,8 @@
 					<li><a
 						href="<%=request.getContextPath()%>/ListarCapacitaciones">Listar
 							Capacitaciones</a></li>
-					<li><a href="<%=request.getContextPath()%>/ListadoDeUsuarios">Listado
-							de Usuarios</a></li>
+					<li><a href="<%=request.getContextPath()%>/ListadoDeUsuarios">Listado de Usuarios</a></li>
+					<li><a href="<%=request.getContextPath()%>/CrearUsuario">Crear usuarios</a></li>
 					<li><a href="<%=request.getContextPath()%>/CerrarSesion">Cerrar
 							Sesión</a></li>
 				</ul>

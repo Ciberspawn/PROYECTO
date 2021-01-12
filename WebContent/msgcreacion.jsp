@@ -22,8 +22,8 @@
                 for="check"></label>        
         </div>
     </header>
-<h1>Creación de Capacitación</h1>
+
 		<p><c:out value="${mensaje}" /></p><br/>
 		<a href="ListarCapacitaciones">Volver al listado de capacitaciones</a>
-</body>
+		</body>
 </html>

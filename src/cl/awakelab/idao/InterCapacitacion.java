@@ -12,8 +12,6 @@ public interface InterCapacitacion {
 	
 	public boolean registrarCapacitacion(Capacitacion itemcap);
 	
-	//public boolean eliminarCapacitacion(Capacitacion itemventa);
-	//public boolean editarCapacitacion(Capacitacion itemventa);
-	//public Capacitacion obtenerCapacitacionPorId(int idCapacitacion);
+	
 
 }

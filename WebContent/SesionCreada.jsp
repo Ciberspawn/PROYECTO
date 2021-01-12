@@ -48,6 +48,11 @@
 
 
 	</fieldset>
-
+<footer id="pie">
+		<blockquote>
+			<a href="CrearCapacitacion">Crear Nueva Capacitacion</a>
+		</blockquote>
+		Derechos Reservados G1 &copy; 2020
+	</footer>
 </body>
 </html>

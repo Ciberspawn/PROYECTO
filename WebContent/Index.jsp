@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Empresa de Asesorías</title>
 <link rel="stylesheet" href="Estilos.css">
  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="script.js"></script>
@@ -19,21 +19,12 @@
                 for="check"></label>
 
         <nav class="menu">
-            <ul>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="login.html">Ingreso</a></li>
-                <li><a href="crearusuario.html">Crear Usuario</a></li>
-                <li><a href="crearcapacitacion.html">Crear Capacitaciones</a></li>
-                <li><a href="listarcapacitaciones.html">Listar Capacitaciones</a></li>
-                <li><a href="administrarasistentes.html">Asistentes Capacitaciones</a></li>
-                <li><a href="listadovisitas.html">Listado Visitas</a></li>
-                <li><a href="listadopago.html">Listado Pago</a></li>
-                <li><a href="listadoasesorias.html">Listado Asesorías</a></li>
-                <li><a href="listadoaccidentes.html">Listado Accidentes</a></li>
-                <li><a href="reportes.html">Reportes</a></li>
-
-            </ul>
-        </nav>
+				<ul>
+				<li><a href="<%=request.getContextPath()%>/Login">Login</a></li>
+					
+				</ul>
+			</nav>
+      
         </div>
     </header>
     <fieldset class="cel- agrupar-t agrupar-e">
@@ -59,7 +50,7 @@
         </section>
     </fieldset>
     <footer id="pie">
-        Derechos Reservados G3 &copy; 2020
+        Derechos Reservados G1 &copy; 2020
     </footer>
 
 </body>

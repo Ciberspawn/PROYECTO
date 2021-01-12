@@ -68,9 +68,9 @@ public class ProfesionalEditado extends HttpServlet {
 		String msg = "";
 
 		if (res) {
-			msg = "El cliente se editó exitosamente";
+			msg = "El profesional se editó exitosamente";
 		} else {
-			msg = "El cliente no se pudo editar porque ocurrió un error";
+			msg = "El profesional no se pudo editar porque ocurrió un error";
 		}
 
 		request.setAttribute("mensaje", msg);

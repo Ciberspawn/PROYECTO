@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Empresa de Asesrías</title>
 <link rel="stylesheet" href="Estilos.css">
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="script.js"></script>
@@ -19,6 +19,7 @@
 
 			<nav class="menu">
 				<ul>
+				<li><a href="<%=request.getContextPath()%>/Login">Login</a></li>
 					<li><a href="<%=request.getContextPath()%>/Contacto">Contacto</a></li>
 
 					<li><a href="<%=request.getContextPath()%>/CrearCapacitacion">Crear
@@ -52,7 +53,7 @@
 		<blockquote>
 			<a href="index.html">Volver a la página de Inicio</a>
 		</blockquote>
-		Derechos Reservados G3 &copy; 2020
+		Derechos Reservados G1 &copy; 2020
 	</footer>
 </body>
 </html>

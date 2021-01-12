@@ -93,7 +93,7 @@ public class UsuariosImpl implements InterUsuarios {
 		String sql = "UPDATE cliente SET RutCliente ='"+itemcliente.getRutCliente()+"',clienombres ='"+itemcliente.getClienombres()+"', cliapellidos ='"
 				+itemcliente.getCliapellidos()+"', clitelefono='"+itemcliente.getClitelefono()+"', cliafp='"+itemcliente.getCliafp()+"', clisistemasalud="
 				+itemcliente.getClisistemasalud()+",clidireccion='"+itemcliente.getClidireccion()+"', clicomuna='"+itemcliente.getClicomuna()+"',CliEdad="
-				+itemcliente.getCliEdad()+" WHERE usuario_idusuario="+itemcliente.getCliente_idusuario()+")";
+				+itemcliente.getCliEdad()+" WHERE usuario_idusuario="+itemcliente.getCliente_idusuario()+"";
 		
 try {
 	con = ConexionSingleton.getConnection();
@@ -157,14 +157,10 @@ return resultado;
 		Statement stm = null;
 
 		
-		String sql = "UPDATE cliente SET Admin_id="
-				+ itemadmin.getIdadministrativo() + " AdminRun ='"				 
-				+ itemadmin.getAdminRun() + "',Adminombres='" 
-				+ itemadmin.getAdmiNombres() + "',AdminApellidos='" 
-				+ itemadmin.getAdminApellidos() + "',AdminCorreo='" 
-				+ itemadmin.getAdminCorreo()+ "',AdminArea='" 
-				+ itemadmin.getAdminArea()+"'WHERE Usuario_idusuario ="
-				+ itemadmin.getUsuario_idusuario()+")";
+		String sql ="UPDATE administrativo SET Idadministrativo="+itemadmin.getIdadministrativo()+", AdminRun ='"+itemadmin.getAdminRun()+"',Adminombres='"+itemadmin.getAdmiNombres()+"',AdminApellidos='"+itemadmin.getAdminApellidos()+"',AdminCorreo='"
+				+itemadmin.getAdminCorreo()+"',AdminArea='"+itemadmin.getAdminArea()+"'WHERE Usuario_idusuario ="+itemadmin.getUsuario_idusuario()+"";
+		
+	
 		try {
 			con = ConexionSingleton.getConnection();
 			stm = con.createStatement();
@@ -226,15 +222,8 @@ return resultado;
 		Connection con = null;
 		Statement stm = null;
 
-		String sql = "UPDATE cliente SET IdProfesional= "
-					+ itemprof.getIdProfesional() + ", ProfRun ='"					
-					+ itemprof.getProfRun() + "', ProfNombres='" 
-					+ itemprof.getProfNombres() + "', ProfApellidos='" 
-					+ itemprof.getProfApellidos() + "', ProfTelefono='" 
-					+ itemprof.getProfTelefono() + "',ProfTitulo='" 
-					+ itemprof.getProfTitulo()+ "',ProfProyecto='"
-					+ itemprof.getProfProyecto()+"'	WHERE  Usuario_idusuario="
-					+ itemprof.getUsuario_idusuario()+")";
+		String sql = "UPDATE profesional SET IdProfesional= "+itemprof.getIdProfesional()+", ProfRun ='"+itemprof.getProfRun()+ "', ProfNombres='"+itemprof.getProfNombres()+ "', ProfApellidos='"+itemprof.getProfApellidos()+ "', ProfTelefono='"+itemprof.getProfTelefono()+ "',ProfTitulo='"+itemprof.getProfTitulo()+ "',ProfProyecto='"
+					+itemprof.getProfProyecto()+"' WHERE  Usuario_idusuario="+itemprof.getUsuario_idusuario()+"";
 		
 		 
 			
@@ -263,7 +252,7 @@ return resultado;
 		
 		Profesional p = new Profesional();
 		
-		String sql = "select idprofesional, profrun, profnombres, profapellidos, proftelefono, proftitulo, profproyecto from profesional where usuario_idusuario = "+ usuario_idusuario+"";
+		String sql = "select idprofesional, profrun, profnombres, profapellidos, proftelefono, proftitulo, profproyecto, usuario_idusuario from profesional where usuario_idusuario = "+ usuario_idusuario+"";
 		
 		try {
 			con = ConexionSingleton.getConnection();
@@ -275,9 +264,10 @@ return resultado;
 				p.setProfRun(rs.getString(2));
 				p.setProfNombres(rs.getString(3));
 				p.setProfApellidos(rs.getString(4));
-				p.setProfTitulo(rs.getString(5));
-				p.setProfProyecto(rs.getString(6));
-				p.setUsuario_idusuario(rs.getInt(7));
+				p.setProfTelefono(rs.getString(5));
+				p.setProfTitulo(rs.getString(6));
+				p.setProfProyecto(rs.getString(7));
+				p.setUsuario_idusuario(rs.getInt(8));
 				
 			}
 		}

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Empresa de Asesorías</title>
 <link rel="stylesheet" href="Estilos.css">
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="script.js"></script>
@@ -20,6 +20,7 @@
 
 			<nav class="menu">
 				<ul>
+				<li><a href="<%=request.getContextPath()%>/Login">Login</a></li>
 					<li><a href="<%=request.getContextPath()%>/Contacto">Contacto</a></li>
 
 					<li><a href="<%=request.getContextPath()%>/CrearCapacitacion">Crear
@@ -27,10 +28,8 @@
 					<li><a
 						href="<%=request.getContextPath()%>/ListarCapacitaciones">Listar
 							Capacitaciones</a></li>
-					<li><a href="<%=request.getContextPath()%>/ListadoDeUsuarios">Listado
-							de Usuarios</a></li>
-					<li><a href="<%=request.getContextPath()%>/CrearUsuario">Crear
-							usuarios</a></li>
+					<li><a href="<%=request.getContextPath()%>/ListadoDeUsuarios">Listado de Usuarios</a></li>
+					<li><a href="<%=request.getContextPath()%>/CrearUsuario">Crear usuarios</a></li>
 					<li><a href="<%=request.getContextPath()%>/CerrarSesion">Cerrar
 							Sesión</a></li>
 				</ul>
@@ -66,7 +65,7 @@
 		<blockquote>
 			<a href="CrearCapacitacion">Crear Nueva Capacitacion</a>
 		</blockquote>
-		Derechos Reservados G3 &copy; 2020
+		Derechos Reservados G1 &copy; 2020
 	</footer>
 </body>
 </html>

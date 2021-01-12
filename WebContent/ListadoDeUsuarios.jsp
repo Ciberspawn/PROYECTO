@@ -22,6 +22,7 @@
 
 			<nav class="menu">
 				<ul>
+				<li><a href="<%=request.getContextPath()%>/Login">Login</a></li>
 					<li><a href="<%=request.getContextPath()%>/Contacto">Contacto</a></li>
 
 					<li><a href="<%=request.getContextPath()%>/CrearCapacitacion">Crear
@@ -29,7 +30,8 @@
 					<li><a
 						href="<%=request.getContextPath()%>/ListarCapacitaciones">Listar
 							Capacitaciones</a></li>
-					<li><a href="<%=request.getContextPath()%>/CrearUsuario">Crear Usuarios</a></li>
+					<li><a href="<%=request.getContextPath()%>/ListadoDeUsuarios">Listado de Usuarios</a></li>
+					<li><a href="<%=request.getContextPath()%>/CrearUsuario">Crear usuarios</a></li>
 					<li><a href="<%=request.getContextPath()%>/CerrarSesion">Cerrar
 							Sesión</a></li>
 				</ul>
@@ -79,7 +81,7 @@
 		<blockquote>
 			<a href="CrearUsuario">Crear un nuevo usuario</a>
 		</blockquote>
-		Derechos Reservados G3 &copy; 2020
+		Derechos Reservados G1 &copy; 2020
 	</footer>
 
 </body>
