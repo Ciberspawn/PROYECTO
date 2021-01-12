@@ -10,9 +10,9 @@ Desarrolladores:
 
 Repositorios GitHub: 
     - Yamilet Ancan: https://github.com/YamiletNahuelcoy/PROYECTO
-    - Daniela Segura: 
-    - Juan Pablo Ibañez:
-    - Fernando Gonzalez: 
+    - Daniela Segura: https://github.com/Daniela-Segura27/PROYECTO.git
+    - Juan Pablo Ibañez: https://github.com/jpablo9006/PROYECTO.git
+    - Fernando Gonzalez: https://github.com/Ciberspawn/PROYECTO.git
 
 
 Proyecto:
